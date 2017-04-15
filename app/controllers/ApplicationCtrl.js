@@ -42,14 +42,14 @@ app.controller('ApplicationCtrl', function($scope, $location) {
  $scope.employment = employmentArr;
  $scope.references = referenceArr;
 
- $scope.submitForm = (isValid) => {
-     console.log(isValid);
-     if(isValid){
-         alert('form is valid');
+ $scope.submitForm = (valid) => {
+    $scope.submitted = true;
+    if(valid){
+        alert('form is valid')
         //need to do something with the application data here. Currently just logging to console.
         console.log($scope.formData);
-        $location.path('/applicationSubmit')
-     }
+        $location.path('/applicationSubmit');
+    }
  }
 
 });

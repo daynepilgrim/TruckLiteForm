@@ -9,9 +9,12 @@
         <div ng-include="'partials/formPartials/miscellaneous.html'"></div>
         <div ng-include="'partials/formPartials/agreement.html'"></div>
         <div class="form-group">
+            <div ng-if="submitted" class="has-error text-center">
+                <p class="help-block">Required information missed.  Please check form and submit again.</p>
+            </div>
             <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-12">
-                <button ng-disabled="userForm.$invalid" type="submit" style="width: 100%;" class="btn btn-primary">Submit Your Application</button>
+                <button type="submit" style="width: 100%;" class="btn btn-primary">Submit Your Application</button>
             </div>
     </fieldset>
 </form>

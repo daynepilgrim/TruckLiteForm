@@ -4,28 +4,28 @@
     </div>
     <div class="panel-body">
         <div class="form-group">
-            <div class="col-md-4" ng-class="{'has-error' : appForm.firstName.$error}">
-                First Name
+            <div class="col-md-4" ng-class="{'has-error' : appForm.firstName.$invalid && submitted}">
+                First Name*
                 <input ng-model="formData.applicant.firstName" name="firstName" placeholder="First Name" class="form-control input-md" type="text" required>
-                <div ng-messages="appForm.firstName.$error">
+                <div ng-messages="appForm.firstName.$error" ng-if="submitted">
                     <p ng-message="required" class="help-block">Your first name is required.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                Last Name
+            <div class="col-md-4" ng-class="{'has-error' : appForm.lastName.$invalid && submitted}">
+                Last Name*
                 <input ng-model="formData.applicant.lastName" name="lastName" placeholder="Last Name" class="form-control input-md" type="text" required>
-                <div ng-messages="appForm.lastName.$error">
+                <div ng-messages="appForm.lastName.$error" ng-if="submitted">
                     <p ng-message="required" class="help-block">Your last name is required.</p>
                 </div>
             </div>
             <div class="col-md-1">
                 Initial
-                <input ng-model="formData.applicant.middleInitial" maxLength="1" name="" placeholder="MI" class="form-control input-md" type="text">
+                <input ng-model="formData.applicant.middleInitial" maxLength="1" placeholder="MI" class="form-control input-md" type="text">
             </div>
-            <div class="col-md-3">
-                Application Date
+            <div class="col-md-3" ng-class="{'has-error' : appForm.appDate.$invalid && submitted}">
+                Application Date*
                 <input ng-model="formData.applicant.appDate" name="appDate" class="form-control input-md" type="date" required>
-                <div ng-messages="appForm.appDate.$error">
+                <div ng-messages="appForm.appDate.$error" ng-if="submitted">
                     <p ng-message="required" class="help-block">The date is required.</p>
                 </div>
             </div>
