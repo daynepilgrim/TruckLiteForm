@@ -1,6 +1,6 @@
 'use strict';
 
-let app = angular.module('TruckLiteApp', ['ngRoute']);
+let app = angular.module('TruckLiteApp', ['ngRoute', 'ngMessages']);
 
 app.config(($routeProvider, $locationProvider) => {
     $routeProvider

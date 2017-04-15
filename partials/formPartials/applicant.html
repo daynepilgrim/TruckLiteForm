@@ -4,14 +4,19 @@
     </div>
     <div class="panel-body">
         <div class="form-group">
-            <div class="col-md-4">
+            <div class="col-md-4" ng-class="{'has-error' : appForm.firstName.$error}">
                 First Name
-                <input ng-model="formData.applicant.firstName" name="firstName" placeholder="First Name" class="form-control input-md" type="text">
-                <p ng-show="appForm.firstName.$invalid && !appForm.firstName.$pristine" class="help-block">Your first name is required.</p>
+                <input ng-model="formData.applicant.firstName" name="firstName" placeholder="First Name" class="form-control input-md" type="text" required>
+                <div ng-messages="appForm.firstName.$error">
+                    <p ng-message="required" class="help-block">Your first name is required.</p>
+                </div>
             </div>
             <div class="col-md-4">
                 Last Name
-                <input ng-model="formData.applicant.lastName" name="" placeholder="Last Name" class="form-control input-md" type="text">
+                <input ng-model="formData.applicant.lastName" name="lastName" placeholder="Last Name" class="form-control input-md" type="text" required>
+                <div ng-messages="appForm.lastName.$error">
+                    <p ng-message="required" class="help-block">Your last name is required.</p>
+                </div>
             </div>
             <div class="col-md-1">
                 Initial
@@ -19,7 +24,10 @@
             </div>
             <div class="col-md-3">
                 Application Date
-                <input ng-model="formData.applicant.appDate" name="" class="form-control input-md" type="date">
+                <input ng-model="formData.applicant.appDate" name="appDate" class="form-control input-md" type="date" required>
+                <div ng-messages="appForm.appDate.$error">
+                    <p ng-message="required" class="help-block">The date is required.</p>
+                </div>
             </div>
         </div>
         <div class="form-group">
