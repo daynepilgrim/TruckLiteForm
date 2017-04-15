@@ -43,6 +43,7 @@ app.controller('ApplicationCtrl', function($scope, $location) {
  $scope.references = referenceArr;
 
  $scope.submitForm = () => {
+     //need to do something with the application data here. Currently just logging to console.
      console.log($scope.formData);
      $location.path('/applicationSubmit')
  }
