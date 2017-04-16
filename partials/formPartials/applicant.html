@@ -31,13 +31,19 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-4">
+            <div class="col-md-4" ng-class="{'has-error' : appForm.homePhone.$invalid && submitted}">
                 Home Phone
-                <input ng-model="formData.applicant.homePhone" placeholder="(123)-456-7890" class="form-control input-md" type="tel">
+                <input name="homePhone" ng-model="formData.applicant.homePhone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" placeholder="(123)-456-7890" class="form-control input-md" type="tel">
+                <div ng-messages="appForm.homePhone.$error" ng-if="submitted">
+                    <p ng-message="pattern" class="help-block">Must be a valid 10 digit phone number.</p>
+                </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" ng-class="{'has-error' : appForm.homePhone.$invalid && submitted}">
                 Cell Phone
-                <input ng-model="formData.applicant.cellPhone" placeholder="(123)-456-7890" class="form-control input-md" type="tel">
+                <input name="cellPhone" ng-model="formData.applicant.cellPhone" placeholder="(123)-456-7890" class="form-control input-md" type="tel">
+                <div ng-messages="appForm.cellPhone.$error" ng-if="submitted">
+                    <p ng-message="pattern" class="help-block">Must be a valid 10 digit phone number.</p>
+                </div>
             </div>
             <div class="col-md-4">
                 Email

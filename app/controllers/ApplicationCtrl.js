@@ -45,7 +45,6 @@ app.controller('ApplicationCtrl', function($scope, $location) {
  $scope.submitForm = (valid) => {
     $scope.submitted = true;
     if(valid){
-        alert('form is valid')
         //need to do something with the application data here. Currently just logging to console.
         console.log($scope.formData);
         $location.path('/applicationSubmit');
